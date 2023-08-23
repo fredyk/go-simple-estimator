@@ -1,4 +1,4 @@
-module github.com/fredyk/simple-estimator
+module github.com/fredyk/go-simple-estimator
 
 go 1.20
 
