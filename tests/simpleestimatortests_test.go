@@ -1,7 +1,7 @@
 package tests
 
 import (
-	simple_estimator "github.com/fredyk/simple-estimator/simple-estimator"
+	simpleestimator "github.com/fredyk/go-simple-estimator/simple-estimator"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -13,7 +13,7 @@ func TestMain(m *testing.M) {
 func TestEstimate(t *testing.T) {
 	t.Parallel()
 
-	estimator := simple_estimator.NewSimpleEstimator(10.0, 0.4)
+	estimator := simpleestimator.NewSimpleEstimator(10.0, 0.4)
 
 	position := [3]int{1, 2, 3}
 	estimatedValue := estimator.Estimate(position)
@@ -25,7 +25,7 @@ func TestUpdateWithEstimation(t *testing.T) {
 
 	t.Parallel()
 
-	estimator := simple_estimator.NewSimpleEstimator(10.0, 0.4)
+	estimator := simpleestimator.NewSimpleEstimator(10.0, 0.4)
 
 	PositionForVariableOne := 2
 	PositionForVariableTwo := 2
@@ -66,7 +66,7 @@ func TestUpdateWithEstimation(t *testing.T) {
 	assert.Equal(t, 12.78528, weights[PositionForVariableOne][PositionForVariableTwo][PositionForVariableThree])
 
 	// load the weights
-	estimator2 := simple_estimator.NewSimpleEstimator(10.0, 0.4)
+	estimator2 := simpleestimator.NewSimpleEstimator(10.0, 0.4)
 	estimator2.SetWeights(weights)
 
 	// check the weights
